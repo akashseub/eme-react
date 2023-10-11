@@ -3,8 +3,8 @@ import LoginForm from "../LoginForm/LoginForm";
 import SlideShow from "../SlideShow/SlideShow";
 
 const loginButtonHandler = () => {
-    console.log('Button Clicked');
-    <LoginForm></LoginForm>
+    
+    <LoginForm loginButtonHandler = {loginButtonHandler}></LoginForm>
 }
 
 const Home = () => {
