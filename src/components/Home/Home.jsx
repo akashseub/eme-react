@@ -1,10 +1,9 @@
 import Header from "../Header/Header";
-import LoginForm from "../LoginForm/LoginForm";
+// import LoginForm from "../LoginForm/LoginForm";
 import SlideShow from "../SlideShow/SlideShow";
 
 const loginButtonHandler = () => {
-    
-    <LoginForm loginButtonHandler = {loginButtonHandler}></LoginForm>
+    console.log('button clicked')
 }
 
 const Home = () => {

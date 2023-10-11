@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import logo from '../../assets/eme-logo.png'
 
-const Header = ({loginButtonHandler}) => {
+const Header = ({ loginButtonHandler }) => {
     return (
         <header className='flex justify-between items-center px-20 py-4 bg-slate-200 shadow-md'>
             <div className='flex items-center space-x-4'>
@@ -15,7 +15,18 @@ const Header = ({loginButtonHandler}) => {
                     <li><a href="">Service</a></li>
                     <li><a href="">Contact us</a></li>
                 </ul>
-                <button onClick={() => loginButtonHandler()} className='bg-[#182C61] text-white font-extrabold px-4 py-2 rounded-lg'>Login</button>
+                <button id='login-button' onClick={()=>document.getElementById('my_modal_5').showModal()} className='bg-[#182C61] text-white font-extrabold px-4 py-2 rounded-lg'>Login</button>
+                <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                    <div className="modal-box">
+                        <h3 className="font-bold text-lg">Hello!</h3>
+                        <p className="py-4">Press ESC key or click the button below to close</p>
+                        <div className="modal-action">
+                            <form method="dialog">
+                                <button className="btn items-center">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
             </div>
         </header>
     );
