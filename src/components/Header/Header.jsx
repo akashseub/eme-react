@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import logo from '../../assets/eme-logo.png'
 
 const Header = ({ loginButtonHandler }) => {
@@ -10,10 +12,10 @@ const Header = ({ loginButtonHandler }) => {
             </div>
             <div className='flex space-x-8 items-center'>
                 <ul className='flex space-x-4 font-semibold hover:text-[#2C3A47]'>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About us</a></li>
-                    <li><a href="">Service</a></li>
-                    <li><a href="">Contact us</a></li>
+                    <Link to = '/'>Home</Link>
+                    <Link to = '/service'>Service</Link>
+                    <Link to = '/about'>About Us</Link>
+                    <Link to = '/contact'>Contact Us</Link>
                 </ul>
                 <button id='login-button' onClick={()=>document.getElementById('my_modal_5').showModal()} className='bg-[#182C61] text-white font-extrabold px-4 py-2 rounded-lg'>Login</button>
                 <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
