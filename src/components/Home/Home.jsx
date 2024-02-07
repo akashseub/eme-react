@@ -9,7 +9,7 @@ const loginButtonHandler = () => {
 
 const Home = () => {
     return (
-        <div className="space-y-4">
+        <div className="">
             <Header loginButtonHandler={loginButtonHandler}></Header>
             <SlideShow></SlideShow>
             <Outlet></Outlet>
