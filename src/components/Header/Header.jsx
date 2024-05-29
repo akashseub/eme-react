@@ -5,11 +5,11 @@ import logo from "../../assets/eme-logo.png";
 
 const style = {};
 
-const Header = ({ loginButtonHandler }) => {
+const Header = () => {
   return (
-    <header className="shadow-md bg-slate-100 ">
-      <div className="flex justify-between rounded-xl max-w-screen-xl mx-auto py-2">
-        <div className="flex items-center space-x-4">
+    <header className="">
+      <div className="flex justify-between rounded-xl py-2">
+        <div className="flex items-center space-x-4 bg-white/40 rounded-xl p-2">
           <img className="w-12" src={logo} alt="" />
           <h1 className="text-4xl font-bold">
             <span className="text-[#182C61]">EME</span>
@@ -17,7 +17,7 @@ const Header = ({ loginButtonHandler }) => {
           </h1>
         </div>
         <div className="flex space-x-8 items-center">
-          <ul className="flex space-x-4 font-semibold">
+          <ul className="flex space-x-4 font-semibold text-white">
             <Link className="hover:text-[#2C3A47]" to="/">
               Home
             </Link>

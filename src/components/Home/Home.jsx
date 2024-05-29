@@ -1,17 +1,31 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
+import Banner from "../Banner/Banner";
+import OurServices from "../OurServices/OurServices";
 // import LoginForm from "../LoginForm/LoginForm";
 // import SlideShow from "../SlideShow/SlideShow";
 
-const loginButtonHandler = () => {
-  console.log("button clicked");
-};
-
 const Home = () => {
   return (
-    <div className="">
-      <Header loginButtonHandler={loginButtonHandler}></Header>
-      <Outlet></Outlet>
+    <div>
+      <div className="relative">
+        <div className="container mx-auto relative z-10">
+          <Header />
+          <Banner />
+        </div>
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://i.ibb.co/pJJNg2r/banner2.png"
+            alt="Overlay"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+      </div>
+      <div className="container mx-auto">
+        <OurServices></OurServices>
+      </div>
+      <Outlet />
     </div>
   );
 };

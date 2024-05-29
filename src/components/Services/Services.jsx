@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ProjectStatus from "../ProjectStatus/ProjectStatus";
 
 const Services = () => {
@@ -6,7 +7,9 @@ const Services = () => {
       <div className="title_bar">
         <div className="navbar bg-base-400">
           <div className="flex-1">
-            <a className="btn btn-ghost text-xl">EMEISLTD</a>
+            <Link to={"/"}>
+              <a className="btn btn-ghost text-xl">EMEISLTD</a>
+            </Link>
           </div>
           <div className="flex-none gap-2">
             <div className="form-control">
