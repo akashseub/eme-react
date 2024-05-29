@@ -2,6 +2,9 @@ import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 import Banner from "../Banner/Banner";
 import OurServices from "../OurServices/OurServices";
+import Footer from "../Footer/Footer";
+import AboutUs from "../AboutUs/AboutUs";
+import OurMission from "../OurMission/OurMission";
 // import LoginForm from "../LoginForm/LoginForm";
 // import SlideShow from "../SlideShow/SlideShow";
 
@@ -22,10 +25,13 @@ const Home = () => {
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto space-y-12">
         <OurServices></OurServices>
+        <AboutUs></AboutUs>
+        <OurMission></OurMission>
       </div>
       <Outlet />
+      <Footer></Footer>
     </div>
   );
 };

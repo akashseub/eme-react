@@ -5,11 +5,28 @@ import logo from "../../assets/eme-logo.png";
 
 const style = {};
 
+const links = (
+  <>
+    <li className="hover:bg-[#182C61] hover:rounded">
+      <Link>Home</Link>
+    </li>
+    <li>
+      <Link>Service</Link>
+    </li>
+    <li>
+      <Link>About Us</Link>
+    </li>
+    <li>
+      <Link>Contact Us</Link>
+    </li>
+  </>
+);
+
 const Header = () => {
   return (
     <header className="">
       <div className="flex justify-between rounded-xl py-2">
-        <div className="flex items-center space-x-4 bg-white/40 rounded-xl p-2">
+        <div className="flex items-center space-x-4 bg-white/50 rounded-xl p-2">
           <img className="w-12" src={logo} alt="" />
           <h1 className="text-4xl font-bold">
             <span className="text-[#182C61]">EME</span>
@@ -17,20 +34,7 @@ const Header = () => {
           </h1>
         </div>
         <div className="flex space-x-8 items-center">
-          <ul className="flex space-x-4 font-semibold text-white">
-            <Link className="hover:text-[#2C3A47]" to="/">
-              Home
-            </Link>
-            <Link className="hover:text-[#2C3A47]" to="/service">
-              Service
-            </Link>
-            <Link className="hover:text-[#2C3A47]" to="/about">
-              About Us
-            </Link>
-            <Link className="hover:text-[#2C3A47]" to="/contact">
-              Contact Us
-            </Link>
-          </ul>
+          <ul className="flex space-x-4 font-semibold text-white">{links}</ul>
           <button
             id="login-button"
             onClick={() => document.getElementById("my_modal_5").showModal()}

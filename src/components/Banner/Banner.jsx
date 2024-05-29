@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <div className="grid grid-cols-3">
-      <div className="col-span-2 w-3/5 text-center px-auto text-white py-24 space-y-8">
+      <div className="col-span-2 w-3/4 text-center px-auto text-white py-24 space-y-8">
         <h1 className="text-6xl font-bold uppercase">Fire Safety Plan</h1>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa
