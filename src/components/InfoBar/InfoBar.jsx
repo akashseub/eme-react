@@ -1,5 +1,6 @@
 import { IoMdCall } from "react-icons/io";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { FaRegClock } from "react-icons/fa6";
 
 const InfoBar = () => {
   return (
@@ -10,7 +11,8 @@ const InfoBar = () => {
           <p>+880 1711527601</p>
         </div>
         <div className="flex space-x-12">
-          <div>
+          <div className="flex items-center space-x-2">
+            <FaRegClock></FaRegClock>
             <p>We are open: 9:AM to 6PM</p>
           </div>
           <div className="flex space-x-2 items-center">

@@ -36,7 +36,7 @@ const OurServices = () => {
         <div className="flex border items-center space-x-2 p-2 rounded-xl h-48 bg-[#ACD793]">
           <PiShippingContainerDuotone className="text-4xl text-[#8E3E63]"></PiShippingContainerDuotone>
           <div>
-            <h1 className="text-2xl font-bold text-[#006769]">
+            <h1 className="text-2xl font-bold text-[#8E3E63]">
               Pre Shipment & Post Landing Inspection
             </h1>
           </div>
