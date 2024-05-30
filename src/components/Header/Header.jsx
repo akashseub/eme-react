@@ -29,8 +29,8 @@ const Header = () => {
         <div className="flex items-center space-x-4 bg-white/50 rounded-xl p-2">
           <img className="w-12" src={logo} alt="" />
           <h1 className="text-4xl font-bold">
-            <span className="text-[#182C61]">EME</span>
-            <span className="text-[#2C3A47]">ISLTD</span>
+            <span className="text-[#182C61]">EME </span>
+            <span className="text-[#2C3A47]">INSPECTION SERVICES LTD.</span>
           </h1>
         </div>
         <div className="flex space-x-8 items-center">
