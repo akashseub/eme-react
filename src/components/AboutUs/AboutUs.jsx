@@ -1,7 +1,13 @@
 const AboutUs = () => {
   return (
-    <div className="grid grid-cols-2">
-      <div></div>
+    <div className="grid grid-cols-2 items-center">
+      <div className="flex justify-center">
+        <img
+          className="h-96"
+          src="https://i.ibb.co/0BzTznY/3026240.png"
+          alt=""
+        />
+      </div>
       <div>
         <h1 className="text-5xl font-bold uppercase">
           <span className="text-[#373A40]">About</span>{" "}
