@@ -5,12 +5,14 @@ import OurServices from "../OurServices/OurServices";
 import Footer from "../Footer/Footer";
 import AboutUs from "../AboutUs/AboutUs";
 import OurMission from "../OurMission/OurMission";
+import InfoBar from "../InfoBar/InfoBar";
 // import LoginForm from "../LoginForm/LoginForm";
 // import SlideShow from "../SlideShow/SlideShow";
 
 const Home = () => {
   return (
     <div>
+      <InfoBar></InfoBar>
       <div className="relative">
         <div className="container mx-auto relative z-10">
           <Header />
