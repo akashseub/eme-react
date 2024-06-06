@@ -13,7 +13,7 @@ const InfoBar = () => {
         <div className="flex space-x-12">
           <div className="flex items-center space-x-2">
             <FaRegClock></FaRegClock>
-            <p>We are open: 9:AM to 6PM</p>
+            <p>We are open: 9:AM to 6PM || SATURDAY - THURSDAY</p>
           </div>
           <div className="flex space-x-2 items-center">
             <MdOutlineMailOutline></MdOutlineMailOutline>

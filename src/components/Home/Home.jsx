@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import AboutUs from "../AboutUs/AboutUs";
 import OurMission from "../OurMission/OurMission";
 import InfoBar from "../InfoBar/InfoBar";
+import OurClient from "../Our Client/OurClient";
 // import LoginForm from "../LoginForm/LoginForm";
 // import SlideShow from "../SlideShow/SlideShow";
 
@@ -31,6 +32,7 @@ const Home = () => {
         <OurServices></OurServices>
         <AboutUs></AboutUs>
         <OurMission></OurMission>
+        <OurClient></OurClient>
       </div>
       <Outlet />
       <Footer></Footer>

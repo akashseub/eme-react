@@ -2,9 +2,9 @@ const OurMission = () => {
   return (
     <div className="grid grid-cols-2 items-center">
       <div>
-        <h1 className="text-5xl font-bold uppercase">
-          <span className="text-[#373A40]">our </span>
-          <span className="text-[#DC5F00]">mission</span>
+        <h1 className="text-4xl font-bold uppercase">
+          <span className="text-[#DC5F00]">our </span>
+          <span className="text-[#373A40]">mission</span>
         </h1>
         <p>
           ❖ To prevent fire accidents in the working place by reducing the fire

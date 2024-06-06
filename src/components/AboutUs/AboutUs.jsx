@@ -9,7 +9,7 @@ const AboutUs = () => {
         />
       </div>
       <div>
-        <h1 className="text-5xl font-bold uppercase">
+        <h1 className="text-4xl font-bold uppercase">
           <span className="text-[#373A40]">About</span>{" "}
           <span className="text-[#DC5F00]">Us</span>
         </h1>
