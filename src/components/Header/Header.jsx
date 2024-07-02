@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import logo from "../../assets/eme-logo.png";
+import LoginForm from "../LoginForm/LoginForm";
 
 const style = {};
 
@@ -21,6 +22,8 @@ const links = (
     </li>
   </>
 );
+
+
 
 const Header = () => {
   return (
@@ -47,15 +50,7 @@ const Header = () => {
             className="modal modal-bottom sm:modal-middle"
           >
             <div className="modal-box">
-              <h3 className="font-bold text-lg">Hello!</h3>
-              <p className="py-4">
-                Press ESC key or click the button below to close
-              </p>
-              <div className="modal-action">
-                <form method="dialog">
-                  <button className="btn items-center">Login</button>
-                </form>
-              </div>
+              <LoginForm></LoginForm>
             </div>
           </dialog>
         </div>
