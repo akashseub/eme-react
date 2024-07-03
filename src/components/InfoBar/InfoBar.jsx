@@ -4,7 +4,7 @@ import { FaRegClock } from "react-icons/fa6";
 
 const InfoBar = () => {
   return (
-    <div className="bg-[#373A40] text-white font-bold p-2">
+    <div className="bg-[#373A40] text-white text-sm  p-2">
       <div className="container mx-auto flex justify-between">
         <div className="flex items-center space-x-2">
           <IoMdCall></IoMdCall>

@@ -13,7 +13,7 @@ const AboutUs = () => {
           <span className="text-[#373A40]">About</span>{" "}
           <span className="text-[#DC5F00]">Us</span>
         </h1>
-        <p>
+        <p className="text-justify">
           We like to avail the opportunity to introduce ourselves as one of the
           premier and leading Fire Detection & Protection System Consultancy
           (Residential, commercial & industrial), Inspection (Pre-shipment &

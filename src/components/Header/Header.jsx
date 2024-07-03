@@ -8,11 +8,11 @@ const style = {};
 
 const links = (
   <>
-    <li className="hover:bg-[#182C61] hover:rounded">
-      <Link>Home</Link>
+    <li className="ease-in duration-300">
+      <Link to={"/"}>Home</Link>
     </li>
     <li>
-      <Link>Service</Link>
+      <Link to={"/service"}>Service</Link>
     </li>
     <li>
       <Link>About Us</Link>
@@ -23,19 +23,19 @@ const links = (
   </>
 );
 
-
-
 const Header = () => {
   return (
     <header className="">
       <div className="flex justify-between rounded-xl py-2">
-        <div className="flex items-center space-x-4 bg-white/50 rounded-xl p-2">
-          <img className="w-12" src={logo} alt="" />
-          <h1 className="text-4xl font-bold">
-            <span className="text-[#182C61]">EME </span>
-            <span className="text-[#2C3A47]">INSPECTION SERVICES LTD.</span>
-          </h1>
-        </div>
+        <Link to={"/"}>
+          <div className="flex items-center space-x-4 bg-white/50 rounded-xl p-2">
+            <img className="w-8" src={logo} alt="" />
+            <h1 className="text-xl font-bold">
+              <span className="text-[#182C61]">EME </span>
+              <span className="text-[#2C3A47]">INSPECTION SERVICES LTD.</span>
+            </h1>
+          </div>
+        </Link>
         <div className="flex space-x-8 items-center">
           <ul className="flex space-x-4 font-semibold text-white">{links}</ul>
           <button
