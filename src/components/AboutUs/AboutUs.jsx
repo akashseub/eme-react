@@ -1,14 +1,11 @@
 const AboutUs = () => {
   return (
-    <div className="grid grid-cols-2 items-center">
-      <div className="flex justify-center">
-        <img
-          className="h-96"
-          src="https://i.ibb.co/0BzTznY/3026240.png"
-          alt=""
-        />
+    <div className="grid grid-cols-3 items-center">
+      <div className="flex justify-center border py-8 h-96">
+        <img className="" src="https://i.ibb.co/0BzTznY/3026240.png" alt="" />
       </div>
-      <div>
+
+      <div className="bg-[#5d6a7d] h-300px">
         <h1 className="text-4xl font-bold uppercase">
           <span className="text-[#373A40]">About</span>{" "}
           <span className="text-[#DC5F00]">Us</span>
@@ -30,6 +27,10 @@ const AboutUs = () => {
           9001:2015. We maintain the drawing in accordance with BNBC, NFPA &
           FSCD and international standards.
         </p>
+      </div>
+
+      <div>
+        <h2>Hello</h2>
       </div>
     </div>
   );
