@@ -25,7 +25,7 @@ const links = (
 
 const Header = () => {
   return (
-    <header className="">
+    <header className=" border-b-2">
       <div className="flex justify-between rounded-xl py-2">
         <Link to={"/"}>
           <div className="flex items-center space-x-4 bg-white/50 rounded-xl p-2">
@@ -37,7 +37,7 @@ const Header = () => {
           </div>
         </Link>
         <div className="flex space-x-8 items-center">
-          <ul className="flex space-x-4 font-semibold text-white">{links}</ul>
+          <ul className="flex space-x-4 text-[#002a3f]">{links}</ul>
           <button
             id="login-button"
             onClick={() => document.getElementById("my_modal_5").showModal()}

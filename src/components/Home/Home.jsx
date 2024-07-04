@@ -25,7 +25,7 @@ const Home = () => {
             alt="Overlay"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="absolute inset-0 bg-[#f9f9f9] opacity-95"></div>
         </div>
       </div>
       <div className="container mx-auto space-y-12">
