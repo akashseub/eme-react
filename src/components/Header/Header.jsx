@@ -28,7 +28,7 @@ const Header = () => {
     <header className=" border-b-2">
       <div className="flex justify-between rounded-xl py-2">
         <Link to={"/"}>
-          <div className="flex items-center space-x-4 bg-white/50 rounded-xl p-2">
+          <div className="flex items-center space-x-4 rounded-xl p-2">
             <img className="w-8" src={logo} alt="" />
             <h1 className="text-xl font-bold">
               <span className="text-[#182C61]">EME </span>

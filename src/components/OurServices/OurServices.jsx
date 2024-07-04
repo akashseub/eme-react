@@ -9,7 +9,7 @@ const OurServices = () => {
     <div className="text-center uppercase my-12 space-y-12">
       <h1 className="text-4xl font-bold">Our Services</h1>
       <div className="grid grid-cols-4 gap-4 px-2 bg-[#677791] text-white rounded-lg">
-        <div className="flex flex-col items-center justify-center space-y-2 p-2 rounded-xl h-48 zoom-hover">
+        <div className="flex flex-col items-center justify-center space-y-2 p-2 rounded-xl h-48 zoom-hover cursor-pointer">
           <FaFireExtinguisher className="text-4xl"></FaFireExtinguisher>
           <div className="space-y-2">
             <h1 className="text-xl font-bold">Fire Safety Plan</h1>
@@ -20,7 +20,7 @@ const OurServices = () => {
           </div>
         </div>
 
-        <div className=" flex flex-col items-center justify-center space-y-2 p-2 rounded-xl h-48 zoom-hover">
+        <div className=" flex flex-col items-center justify-center space-y-2 p-2 rounded-xl h-48 zoom-hover cursor-pointer">
           <AiFillAlert className="text-4xl"></AiFillAlert>
           <div className="space-y-2">
             <h1 className="text-xl font-bold">Fire Detection & Alarm System</h1>
@@ -31,7 +31,7 @@ const OurServices = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center space-y-2 p-2 rounded-xl h-48 zoom-hover">
+        <div className="flex flex-col items-center justify-center space-y-2 p-2 rounded-xl h-48 zoom-hover cursor-pointer">
           <MdOutlineFireHydrantAlt className="text-4xl"></MdOutlineFireHydrantAlt>
           <div className="space-y-2">
             <h1 className="text-xl font-bold">Fire Protection System</h1>
@@ -42,7 +42,7 @@ const OurServices = () => {
           </div>
         </div>
 
-        <div className=" flex flex-col items-center justify-center space-y-2 p-2 rounded-xl h-48 zoom-hover">
+        <div className=" flex flex-col items-center justify-center space-y-2 p-2 rounded-xl h-48 zoom-hover cursor-pointer">
           <PiShippingContainerDuotone className="text-4xl"></PiShippingContainerDuotone>
           <div className="space-y-2">
             <h1 className="text-xl font-bold">
