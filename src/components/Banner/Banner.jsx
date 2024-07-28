@@ -26,7 +26,18 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div>hi</div>
+      <div>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeZ5rv0LTwdeyUBwUywY90x49a8zW6Dz4GHmiiOBc686Ys9dA/viewform?embedded=true"
+          width="640"
+          height="2570"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >
+          Loading…
+        </iframe>
+      </div>
     </div>
   );
 };
