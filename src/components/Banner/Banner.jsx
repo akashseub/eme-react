@@ -3,7 +3,7 @@ const Banner = () => {
     <div className="grid grid-cols-3">
       <div className="col-span-2 w-3/4 text-center px-auto py-24 space-y-8">
         <h1 className="text-6xl font-bold uppercase text-[#002a3f]">
-          Fire Safety Plan
+          Fire Safety Project
         </h1>
         <p className="text-[#5d6a7d]">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa
