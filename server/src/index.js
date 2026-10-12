@@ -87,6 +87,22 @@ routes.patch('/users/:userId',auth,allow('users.manage'),(req,res)=>{
  db.prepare('UPDATE users SET name=?,role=?,role_id=? WHERE id=?').run(name,base,roleId,existing.id);
  res.json(userView(db.prepare('SELECT * FROM users WHERE id=?').get(existing.id)));
 });
+routes.delete('/users/:userId',auth,allow('users.manage'),(req,res)=>{
+ const existing=db.prepare('SELECT id,role FROM users WHERE id=?').get(req.params.userId);
+ if(!existing)return error(res,404,'User not found');
+ if(existing.role==='Super Admin'||existing.id===req.user.id)return error(res,403,'Cannot delete Super Admin or your own account');
+ // Prevent orphaned project, payment and document history. Reassign historical records first.
+ const references=[
+  ['projects','created_by'],['payments','created_by'],['payments','confirmed_by'],
+  ['updates','author_id'],['documents','author_id']
+ ];
+ for(const [table,column] of references){
+  if(db.prepare(`SELECT 1 FROM ${table} WHERE ${column}=? LIMIT 1`).get(existing.id))
+   return error(res,409,'This user has project or payment history. Preserve or reassign their records before deletion.');
+ }
+ db.prepare('DELETE FROM users WHERE id=?').run(existing.id);
+ res.json({ok:true});
+});
 routes.post('/users/:userId/reset-password',auth,allow('users.manage'),(req,res)=>{
  const existing=db.prepare('SELECT * FROM users WHERE id=?').get(req.params.userId),password=req.body?.password;
  if(!existing)return error(res,404,'User not found');if(existing.role==='Super Admin')return error(res,403,'Cannot reset a Super Admin password through this screen');

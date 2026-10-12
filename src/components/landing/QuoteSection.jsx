@@ -2,5 +2,69 @@ import { ArrowRight, ShieldCheck, CheckCircle2, Phone, MessageSquareText, Clipbo
 
 import { services } from '@/config/services';
 import Field from '@/components/common/Field';
-function QuoteSection({sent,submit,form,setForm}){return <section className="quote-section section" id="quote"><div className="container quote-grid"><div className="quote-intro"><div className="eyebrow light">START YOUR PROJECT</div><h2>Let's Make Your Facility <em>Safer.</em></h2><p>Tell us about your requirements and our team can follow up to discuss the next steps.</p><div className="quote-points"><div><ShieldCheck size={23}/><span>Technical consultation</span></div><div><ClipboardList size={23}/><span>Project-specific requirements</span></div><div><MessageSquareText size={23}/><span>Clear communication</span></div></div><p className="small-disclaimer">Submitted requests are securely stored in the company server database.</p></div><div className="quote-card"><h3>Request a Quotation</h3><p>Complete the form below to get started.</p>{sent&&<div className="success-message"><CheckCircle2 size={17}/> Request received and saved. Our team can review it in the admin panel.</div>}<form onSubmit={submit} className="form-grid"><Field label="Organization Name *"><input required value={form.organization} onChange={e=>setForm({...form,organization:e.target.value})} placeholder="Company / organization"/></Field><Field label="Contact Person *"><input required value={form.contact} onChange={e=>setForm({...form,contact:e.target.value})} placeholder="Full name"/></Field><Field label="Phone Number *"><input required value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} placeholder="01XXXXXXXXX"/></Field><Field label="Email Address"><input type="email" value={form.email} onChange={e=>setForm({...form,email:e.target.value})} placeholder="name@company.com"/></Field><Field label="Project Location"><input value={form.location} onChange={e=>setForm({...form,location:e.target.value})} placeholder="City / area"/></Field><Field label="Required Service"><select value={form.service} onChange={e=>setForm({...form,service:e.target.value})}><option value="">Select a service</option>{services.map(s=><option key={s.title}>{s.title}</option>)}</select></Field><Field label="Project Details" wide><textarea rows="4" value={form.details} onChange={e=>setForm({...form,details:e.target.value})} placeholder="Tell us about your facility, scope and requirements..."/></Field><button type="submit" className="btn btn-primary submit-quote">Submit Request <ArrowRight size={17}/></button></form></div></div></section>}
+function QuoteSection({ sent, submit, form, setForm }) {
+    return <section className="quote-section section" id="quote">
+        <div className="container quote-grid">
+            <div className="quote-intro">
+                <div className="eyebrow light">START YOUR PROJECT</div>
+                <h2>Let's Make Your Facility <em>Safer.</em></h2>
+                <p>Tell us about your requirements and our team can follow up to discuss the next steps.</p>
+                <div className="quote-points">
+                    <div>
+                        <ShieldCheck size={23} />
+                        <span>Technical consultation</span>
+                    </div>
+                    <div><ClipboardList size={23} /><span>Project-specific requirements</span></div>
+                    <div><MessageSquareText size={23} /><span>Clear communication</span></div>
+                </div>
+                <p className="small-disclaimer">Submitted requests are securely stored in the company server database.</p>
+            </div>
+            <div className="quote-card">
+                <h3>Request a Quotation</h3>
+                <p>Complete the form below to get started.</p>
+                {sent && <div className="success-message"><CheckCircle2 size={17} /> Request received and saved. Our team can review it in the admin panel.</div>}
+                <form onSubmit={submit} className="form-grid">
+                    <Field label="Organization Name *">
+                        <input required value={form.organization} onChange={e => setForm({ ...form, organization: e.target.value })} placeholder="Company / organization" />
+                    </Field>
+
+                    <Field label="Contact Person *">
+                        <input required value={form.contact} onChange={e => setForm({ ...form, contact: e.target.value })} placeholder="Full name" />
+                    </Field>
+
+                    <Field label="Phone Number *">
+                        <input required value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} placeholder="01XXXXXXXXX" />
+                    </Field>
+
+                    <Field label="Email Address">
+                        <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} placeholder="name@company.com" />
+                    </Field>
+
+                    <Field label="Project Location">
+                        <input value={form.location} onChange={e => setForm({ ...form, location: e.target.value })} placeholder="City / area" />
+                    </Field>
+
+                    <Field label="Total Area (sft.)">
+                        <input value={form.area} onChange={e => setForm({ ...form, area: e.target.value })} placeholder="00.0" />
+                    </Field>
+
+                    <Field label="Font Road Width (feet)">
+                        <input value={form.road} onChange={e => setForm({ ...form, road: e.target.value })} placeholder="00.0" />
+                    </Field>
+
+                    <Field label="Required Service"><select value={form.service} onChange={e => setForm({ ...form, service: e.target.value })}>
+                        <option value="">Select a service</option>{services.map(s => <option key={s.title}>{s.title}</option>)}</select>
+                    </Field>
+
+                    <Field label="Project Details" wide>
+                        <textarea rows="4" value={form.details} onChange={e => setForm({ ...form, details: e.target.value })} placeholder="Give us Total Area and Font Road width" />
+                    </Field>
+
+                    <button type="submit" className="btn btn-primary submit-quote">Submit Request <ArrowRight size={17} />
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+}
 export default QuoteSection;

@@ -60,7 +60,8 @@ export const hashToken=token=>createHash('sha256').update(token).digest('hex');
 export function seedDevUsers(){
   seedRoles();
   if (process.env.DEMO_SEED !== 'true') return;
-  const accounts=[['Administrator','admin@eme.local','Super Admin',process.env.ADMIN_PASSWORD],['Marketing Team','marketing@eme.local','Marketing',process.env.MARKETING_PASSWORD],['Engineering Team','engineering@eme.local','Engineering',process.env.ENGINEERING_PASSWORD]];
+  // Provision only the initial administrator. Other accounts are created from Users & Roles.
+  const accounts=[['Administrator','admin@eme.local','Super Admin',process.env.ADMIN_PASSWORD]];
   for(const [name,email,role,password] of accounts) {
     if(!password || password.length<12) throw Error(`Set a 12+ character password for ${email} in server/.env`);
     db.prepare('INSERT OR IGNORE INTO users(id,name,email,role,pass_hash,role_id) VALUES (?,?,?,?,?,?)').run(id(),name,email,role,passwordHash(password),'system-'+role.toLowerCase().replace(/ /g,'-'));

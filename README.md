@@ -43,6 +43,15 @@ When `DEMO_SEED=true`, three user accounts are automatically created on first ba
 | Marketing | marketing@eme.local | ChangeMeMarketing_123! |
 | Engineering | engineering@eme.local | ChangeMeEngineering_123! |
 
+safiq@eme.local
+safiq@eme101
+
+shagor@eme.local
+shagor@eme102
+
+shahidul@eme.local
+shahidul@eme103
+
 Change all passwords **in `.env` before the first launch**. The seed creates only missing users; changing environment passwords does **not** reset existing accounts. This is a development bootstrap only. **Do not expose the seeded credentials on a public deployment.** Turn off `DEMO_SEED` for production.
 
 ## Features
