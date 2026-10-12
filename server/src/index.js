@@ -18,7 +18,12 @@ app.get('/api/health', (req, res) => {
 })
 app.disable('x-powered-by');
 app.use(express.json({ limit: '80kb' }));
-const origin = process.env.ALLOWED_ORIGIN || 'http://localhost:5173';
+const allowedOrigins = (
+  process.env.ALLOWED_ORIGIN || 'http://localhost:5173'
+)
+  .split(',')
+  .map(origin => origin.trim().replace(/\/$/, ''))
+  .filter(Boolean);
 const statuses = ['New', 'In Progress', 'Pending Documents', 'Under Review', 'Completed', 'On Hold'];
 const teams = ['Marketing', 'Engineering'];
 const sessionMaxAge = 7 * 24 * 3600 * 1000;
@@ -29,13 +34,25 @@ const clean = (t) => typeof t === 'string' ? t.trim() : '';
 const validDate = t => typeof t === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(t) && !Number.isNaN(Date.parse(t + 'T00:00:00Z'));
 const userView = u => userWithPermissions(u);
 const routes = express.Router();
+
 routes.use((req, res, next) => {
-  if (['POST', 'PATCH', 'PUT', 'DELETE'].includes(req.method)) {
-    const sent = req.get('origin');
-    if (sent && sent !== origin) return error(res, 403, 'Invalid request origin');
+  const methods = ['POST', 'PATCH', 'PUT', 'DELETE'];
+
+  if (methods.includes(req.method)) {
+    const sentOrigin = req.get('origin');
+
+    if (sentOrigin && !allowedOrigins.includes(sentOrigin)) {
+      console.warn('Rejected request origin:', sentOrigin);
+
+      return res.status(403).json({
+        error: 'Invalid request origin'
+      });
+    }
   }
+
   next();
 });
+
 function cookie(req) { return (req.headers.cookie || '').split(';').map(x => x.trim()).find(x => x.startsWith(cookieName + '='))?.slice(cookieName.length + 1); }
 function auth(req, res, next) { const token = cookie(req); if (!token) return error(res, 401, 'Please sign in'); const u = db.prepare('SELECT u.id,u.name,u.email,u.role,u.role_id FROM sessions s JOIN users u ON s.user_id=u.id WHERE s.token_hash=? AND s.expires_at>?').get(hashToken(token), Date.now()); if (!u) return error(res, 401, 'Session expired; please sign in'); req.user = userView(u); next(); }
 const allow = (permission) => (req, res, next) => req.user?.permissions?.includes(permission) ? next() : error(res, 403, 'Insufficient permissions');
