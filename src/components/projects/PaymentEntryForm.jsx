@@ -1,0 +1,12 @@
+import {useState} from 'react';
+import {Plus,LockKeyhole} from 'lucide-react';
+import {post} from '@/lib/api';
+import {money,today} from '@/data/store';
+export default function PaymentEntryForm({project,refresh}){
+ const [amount,setAmount]=useState('');const [date,setDate]=useState(today());const [remarks,setRemarks]=useState('');const [busy,setBusy]=useState(false);const [error,setError]=useState('');
+ const counted=(project.payments||[]).filter(x=>x.status!=='Rejected').reduce((sum,x)=>sum+Number(x.amount),0);
+ const confirmed=(project.payments||[]).filter(x=>x.status==='Confirmed').reduce((sum,x)=>sum+Number(x.amount),0);
+ const balance=Number(project.value)-counted;
+ async function save(e){e.preventDefault();setError('');const n=Number(amount);if(!Number.isFinite(n)||n<=0||Math.round(n*100)>Math.round(balance*100)){setError('Enter a positive amount no larger than the unreported balance.');return}setBusy(true);try{await post(`/projects/${encodeURIComponent(project.id)}/payments`,{amount:n,date,remarks});await refresh();setAmount('');setRemarks('');}catch(err){setError(err.message)}finally{setBusy(false)}}
+ return <div className="panel padded"><div className="panel-heading"><div><h3>Add Payment Receipt</h3><p>Any amount, any date — no payment plan required</p></div></div><div className="detail-summary" style={{marginBottom:20}}><div><small>Project Value</small><strong>{money(project.value)}</strong></div><div><small>Confirmed Received</small><strong>{money(confirmed)}</strong></div><div><small>Unreported Balance</small><strong>{money(balance)}</strong></div></div><form onSubmit={save} className="stacked-form"><label>Amount received (BDT)<input required type="number" min="0.01" step="0.01" max={Math.max(balance,0)} value={amount} onChange={e=>setAmount(e.target.value)} placeholder="Enter payment amount"/></label><label>Received Date<input required type="date" value={date} onChange={e=>setDate(e.target.value)}/></label><label>Remarks<textarea rows="3" value={remarks} maxLength={1500} onChange={e=>setRemarks(e.target.value)} placeholder="Bank transfer, cash, invoice reference, etc."/></label>{error&&<div className="form-error">{error}</div>}<button disabled={busy||balance<=0} className="btn btn-primary" type="submit"><Plus size={17}/>{busy?'Saving…':'Add Payment'}</button></form><p className="form-help"><LockKeyhole size={15}/> A receipt is pending until confirmed by Super Admin.</p></div>
+}
