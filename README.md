@@ -1,3 +1,5 @@
+> **MongoDB version:** See [MONGODB_SETUP.md](MONGODB_SETUP.md) for current installation instructions. Older SQLite instructions below describe the original version and no longer apply.
+
 # EME Inspection Services Ltd. — React + SQLite Backend
 
 Working full-stack starter for a public landing page, quotation submissions, password-based login, project tracking, manual payment receipts, Super Admin approvals, daily updates and project document storage.
